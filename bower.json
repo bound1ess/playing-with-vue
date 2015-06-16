@@ -1,0 +1,8 @@
+{
+    "name": "playing-with-vue",
+
+    "dependencies" : {
+        "vue": "latest",
+        "bootstrap": "latest"
+    }
+}
