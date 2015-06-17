@@ -10,8 +10,43 @@
     </head>
     <body>
         <div class="container" id="app">
-            <p>{{ message }}</p>
-            <input v-model="message">
+            <form action="#">
+                <div class="form-group">
+                    <input
+                        class="form-control"
+                        v-model="author"
+                        placeholder="Your name is...">
+                </div>
+
+                <div class="form-group">
+                    <textarea
+                        class="form-control"
+                        v-model="message"
+                        placeholder="Your message is..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button
+                        type="button"
+                        class="btn btn-lg btn-primary"
+                        v-on="click: addComment">Add comment</button>
+                </div>
+            </form>
+            <div>
+                <div class="list-group" v-show="message && author">
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">{{ author }}</h4>
+                        <p class="list-group-item-text">{{ message }}</p>
+                    </a>
+                </div>
+
+                <div class="list-group" v-repeat="comment: comments">
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">{{ comment.author }}</h4>
+                        <p class="list-group-item-text">{{ comment.text }}</p>
+                    </a>
+                </div>
+            </div>
         </div>
     </body>
 </html>
