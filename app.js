@@ -18,7 +18,7 @@ window.onload = function() {
                 e.preventDefault();
 
                 if (this.message && this.author) {
-                    this.comments.push({
+                    this.comments.unshift({
                         author: this.author,
                         text: this.message
                     });

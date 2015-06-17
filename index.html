@@ -8,8 +8,12 @@
         <script src="/bower_components/vue/dist/vue.min.js"></script>
         <script src="/app.js"></script>
     </head>
+
     <body>
         <div class="container" id="app">
+            <h1>Add a comment</h1>
+            <hr>
+
             <form action="#">
                 <div class="form-group">
                     <input
@@ -29,10 +33,15 @@
                     <button
                         type="button"
                         class="btn btn-lg btn-primary"
-                        v-on="click: addComment">Add comment</button>
+                        v-on="click: addComment">Add</button>
                 </div>
             </form>
+
+            <hr>
+
             <div>
+                <h3 v-show="comments.length">Comments ({{ comments.length }})</h3>
+
                 <div class="list-group" v-show="message && author">
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">{{ author }}</h4>
